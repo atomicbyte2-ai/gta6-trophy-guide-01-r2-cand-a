@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEONIDA TROPHY ATLAS — GTA 6 Trophy Guide | All 55 Trophies</title>
+<meta name="description" content="A complete GTA 6 trophy guide: all 55 official trophies with exact names, descriptions, grades and Gamerscore, per-step cited guides, a platinum roadmap and a spoiler-safe checklist. Works offline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap top-in">
+    <div class="brand"><span class="atlas">LEONIDA</span> <span class="atlas2">TROPHY ATLAS</span>
+      <small>GTA 6 Trophy Guide · unofficial fan guide</small></div>
+    <div class="head-stats">
+      <div class="counter"><b id="bigCount">0 / 55</b><span>earned</span></div>
+      <div class="grades" id="gradeCounts"></div>
+    </div>
+    <div class="head-ctl">
+      <label class="spoiler-ctl" for="spoilerToggle"><span>🛡 Spoiler shield</span>
+        <span class="switch"><input type="checkbox" id="spoilerToggle" checked>
+        <span class="tr" aria-hidden="true"></span></span></label>
+      <div class="btnrow">
+        <button class="btn" id="exportBtn" type="button">Export</button>
+        <button class="btn" id="importBtn" type="button">Import</button>
+        <input type="file" id="importFile" accept="application/json,.json" hidden>
+        <button class="btn warn" id="resetBtn" type="button">Reset</button>
+      </div>
+      <small class="saved">Saved in this browser</small>
+    </div>
+  </div>
+  <div class="wrap audit" id="audit" aria-label="Audit strip"></div>
+</header>
+
+<nav class="tabs wrap" role="tablist" aria-label="Guide sections">
+  <button class="tab active" data-tab="tracker" role="tab" type="button">Tracker</button>
+  <button class="tab" data-tab="roadmap" role="tab" type="button">Roadmap</button>
+  <button class="tab" data-tab="missables" role="tab" type="button">Missables</button>
+  <button class="tab" data-tab="sources" role="tab" type="button">Sources</button>
+</nav>
+
+<main class="wrap">
+  <section id="tab-tracker" class="tabpanel">
+    <div class="toolbar">
+      <input class="search" id="search" type="search" placeholder="Search trophies, missions, places…" autocomplete="off" aria-label="Search trophies">
+      <select class="sel" id="gradeSel" aria-label="Filter by grade">
+        <option value="all">All grades</option><option>Platinum</option><option>Gold</option><option>Silver</option><option>Bronze</option>
+      </select>
+      <select class="sel" id="earnedSel" aria-label="Filter by earned">
+        <option value="all">All trophies</option><option value="earned">Earned</option><option value="unearned">Not earned</option>
+      </select>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter by kind"></div>
+    <div class="panes">
+      <div class="pane-list" id="list" aria-label="Trophy list"></div>
+      <div class="pane-detail" id="detail" aria-label="Trophy detail"></div>
+      <aside class="pane-rail" id="rail" aria-label="Next up and sources"></aside>
+    </div>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters.</p>
+  </section>
+
+  <section id="tab-roadmap" class="tabpanel block" hidden>
+    <h2>The road to Platinum</h2>
+    <p class="sub">Three phases, about 200 hours. No online trophies, no difficulty trophies, no mission
+      medals — long, not hard (4/10). Cheats disable trophies and saving, so keep them off.</p>
+    <div class="timeline">
+      <article class="phase"><div class="num">1</div><h3>Story</h3><p class="hours">60–80 hours · Chapters 1–5</p>
+        <ul><li>Play all 5 chapters; do optional missions as they appear.</li>
+        <li>Scan vehicles with the WAiNK app and study animals as you go.</li>
+        <li>Do the Chapter 1 balcony meditation — then keep a manual save at each chapter start.</li>
+        <li>Story trophies pop as you play; some land at the start of the next chapter.</li></ul></article>
+      <article class="phase"><div class="num">2</div><h3>100% checklist</h3><p class="hours">~100 hours · after the story</p>
+        <ul><li>Open the checklist under Progress &gt; Stats &gt; 100% Completion — earlier work counts.</li>
+        <li>Complete 70 of 80 Challenges; 300 stunts; all collectibles.</li>
+        <li>Rob all 39 illegal operations; discover 200 of 277 vehicles.</li>
+        <li>Finish the stranger strands and the drone, race and shooting-range sets.</li></ul></article>
+      <article class="phase"><div class="num">3</div><h3>Clean-up</h3><p class="hours">~10 hours · free roam</p>
+        <ul><li>Strangers &amp; Freaks strands and anything the checklist still shows.</li>
+        <li>Bank vaults, jewelry jobs and the last collectible card sets.</li>
+        <li>Check the missables tab before you call it done.</li>
+        <li>Your 54th trophy triggers the Platinum — Vice Got a Price!</li></ul></article>
+    </div>
+    <div class="callout" role="alert"><h3>⚠ The one possibly missable trophy</h3>
+      <p><strong>Positive Mental Attitude</strong> — meditate at every spot across Leonida. The Chapter 1
+      balcony meditation (the morning after <em>Down to Earth</em>, once Lucia is home — follow her to
+      Jason's house balcony and accept) disappears after Chapter 1. Do it anyway, and keep a manual save
+      at the start of every chapter. It is not 100% confirmed that the balcony spot counts — but missing
+      it is the one mistake you cannot undo.</p></div>
+  </section>
+
+  <section id="tab-missables" class="tabpanel block" hidden>
+    <h2>Missables &amp; disputes</h2>
+    <p class="sub">Only one trophy can be missed, and only one has sources that genuinely differ.
+      Everything else is unmissable or stays open after the story.</p>
+    <div id="missableList"></div>
+    <h3>Still unconfirmed</h3>
+    <p class="sub">These 7 guides say plainly where the method is still being confirmed by the
+      community, instead of inventing one. Click any row to open it in the tracker.</p>
+    <div id="unconfirmedList"></div>
+  </section>
+
+  <section id="tab-sources" class="tabpanel block" hidden>
+    <h2>Sources</h2>
+    <p class="sub">Trophy names, descriptions, grades and Gamerscore are the official list as reported
+      by sources [1] and [2] (both updated 18 Nov 2026; both lists agree on all 55). Guides are written
+      in our own words; where a method is still being confirmed, the guide says so instead of inventing one.</p>
+    <ol class="sources" id="sourceList"></ol>
+    <p class="sub" id="auditNote"></p>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  LEONIDA TROPHY ATLAS — an unofficial fan guide. Not affiliated with Rockstar Games. No official artwork or logos are used.
+  Trophy data: 55 trophies · 1 Platinum / 2 Gold / 6 Silver / 46 Bronze · 1,000 Gamerscore.
+</div></footer>
+
+<script src="main.js"></script>
+</body>
+</html>
